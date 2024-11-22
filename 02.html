@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #bottom {
+      width: 580px;
+      height: 100px;
+      position: relative;
+      margin: auto;
+      margin-top: 250px;
+      background-image: linear-gradient(to bottom, white 10%, lightgray 65%, white 100%);
+      border: 1px solid #aaa;
+      border-radius: 0px 10px 10px 0px;
+    }
+
+    /* 壓蓋 */
+    #bottom::before {
+      content: "";
+      width: 50px;
+      height: 150px;
+      position: absolute;
+      left: -52px;
+      top: -25px;
+      background-image: linear-gradient(to bottom, white 10%, lightgray 60%, white 100%);
+      border: 1px solid #aaa;
+      border-radius: 10%;
+    }
+
+    /* 針 */
+    #bottom::after {
+      content: "";
+      width: 100px;
+      height: 0;
+      position: absolute;
+      right: -102px;
+      top: 50px;
+      border: 1px solid gray;
+    }
+
+    /* 針筒本筒 */
+    #body {
+      width: 450px;
+      height: 150px;
+      position: absolute;
+      left: 65px;
+      top: -25px;
+      background-image: linear-gradient(to right, white 50%, lightgoldenrodyellow 50% 100%);
+      border: 1px solid #aaa;
+    }
+
+    /* 刻度 */
+    #body::before {
+      content: "";
+      width: 450px;
+      height: 20px;
+      position: absolute;
+      background-image: linear-gradient(to left, #aaa 1px, transparent 1px);
+      background-repeat: repeat;
+      background-size: 15px;
+    }
+
+    /* 針筒上的黑色 */
+    #body::after {
+      content: "";
+      width: 450px;
+      height: 150px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: linear-gradient(to right, transparent 45%, black 45% 55%, transparent 55% 100%);
+    }
+
+    #text {
+      width: 140px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    /* body上的灰漸層 */
+    #text::after {
+      content: "";
+      width: 450px;
+      height: 150px;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      background-image: linear-gradient(to bottom, transparent 10%, lightgray 60%, transparent 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="bottom">
+    <div id="body">
+      <div id="text">Made in Taiwan</div>
+    </div>
+  </div>
+</body>
+
+</html>
